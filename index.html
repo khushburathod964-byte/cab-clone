@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCab - Book Your Ride</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-taxi"></i> QuickCab
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1>Your Ride, Your Way</h1>
+            <p>Book a cab in seconds and travel with comfort</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Booking Form -->
+            <div class="col-lg-8">
+                <div class="booking-card">
+                    <h2 class="mb-4"><i class="fas fa-calendar-check"></i> Book Your Ride</h2>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-map-marker-alt text-primary"></i> Pickup Location
+                            </label>
+                            <input type="text" class="form-control" id="pickup" placeholder="Enter pickup location">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-map-marker-alt text-danger"></i> Drop-off Location
+                            </label>
+                            <input type="text" class="form-control" id="dropoff" placeholder="Enter drop-off location">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-calendar"></i> Date
+                            </label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-clock"></i> Time
+                            </label>
+                            <input type="time" class="form-control" id="time">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-user"></i> Full Name
+                            </label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="fas fa-users"></i> Number of Passengers
+                        </label>
+                        <select class="form-select" id="passengers">
+                            <option value="1">1 Passenger</option>
+                            <option value="2">2 Passengers</option>
+                            <option value="3">3 Passengers</option>
+                            <option value="4">4 Passengers</option>
+                            <option value="5">5 Passengers</option>
+                            <option value="6">6 Passengers</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">
+                            <i class="fas fa-car"></i> Select Car Type
+                        </label>
+                        <div class="row" id="carTypes">
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="car-card" data-car="mini" data-price="10">
+                                    <div class="car-icon">🚕</div>
+                                    <h6>Mini</h6>
+                                    <p class="mb-0 text-muted">$10/km</p>
+                                    <small class="text-muted">2 seats</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="car-card selected" data-car="sedan" data-price="15">
+                                    <div class="car-icon">🚗</div>
+                                    <h6>Sedan</h6>
+                                    <p class="mb-0 text-muted">$15/km</p>
+                                    <small class="text-muted">4 seats</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="car-card" data-car="suv" data-price="25">
+                                    <div class="car-icon">🚙</div>
+                                    <h6>SUV</h6>
+                                    <p class="mb-0 text-muted">$25/km</p>
+                                    <small class="text-muted">6 seats</small>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="car-card" data-car="luxury" data-price="45">
+                                    <div class="car-icon">🚘</div>
+                                    <h6>Luxury</h6>
+                                    <p class="mb-0 text-muted">$45/km</p>
+                                    <small class="text-muted">4 seats</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-book" onclick="bookRide()">
+                        <i class="fas fa-credit-card"></i> Book Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Features -->
+                <div class="feature-card mb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="feature-icon me-3">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">24/7 Service</h6>
+                            <small class="text-muted">Available anytime, anywhere</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="feature-icon me-3">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Safe & Secure</h6>
+                            <small class="text-muted">Verified drivers only</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="feature-icon me-3">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Best Prices</h6>
+                            <small class="text-muted">Affordable and transparent</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="feature-icon me-3">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Easy Booking</h6>
+                            <small class="text-muted">Book in under 2 minutes</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo -->
+                <div class="promo-card">
+                    <h4 class="mb-2">Special Offer!</h4>
+                    <p class="mb-0">Get 20% off on your first ride</p>
+                    <div class="promo-code">FIRST20</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="mb-3">Booking Confirmed!</h2>
+            <p class="text-muted mb-4">Your ride has been successfully booked. A driver will be assigned shortly.</p>
+            <div class="text-start bg-light p-3 rounded mb-4">
+                <h6 class="mb-3">Booking Details:</h6>
+                <p class="mb-2"><strong>From:</strong> <span id="confirmPickup"></span></p>
+                <p class="mb-2"><strong>To:</strong> <span id="confirmDropoff"></span></p>
+                <p class="mb-2"><strong>Date:</strong> <span id="confirmDate"></span></p>
+                <p class="mb-2"><strong>Time:</strong> <span id="confirmTime"></span></p>
+                <p class="mb-2"><strong>Car:</strong> <span id="confirmCar"></span></p>
+                <p class="mb-0"><strong>Passengers:</strong> <span id="confirmPassengers"></span></p>
+            </div>
+            <button class="btn btn-book" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 QuickCab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
